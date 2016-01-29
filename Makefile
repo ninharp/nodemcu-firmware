@@ -4,9 +4,8 @@
 ifndef PDIR
 
 endif
-
 # SDK version NodeMCU is locked to
-SDK_VER:=1.4.0
+SDK_VER:=1.5.1
 # Ensure we search "our" SDK before the tool-chain's SDK (if any)
 TOP_DIR:=$(dir $(lastword $(MAKEFILE_LIST)))
 SDK_DIR:=$(TOP_DIR)sdk/esp_iot_sdk_v$(SDK_VER)
@@ -21,11 +20,11 @@ ifeq ($(OS),Windows_NT)
 # We are under windows.
 	ifeq ($(XTENSA_CORE),lx106)
 		# It is xcc
-		AR = xt-ar
-		CC = xt-xcc
+		AR = xtensa-lx106-elf-ar
+		CC = xtensa-lx106-elf-gcc
 		NM = xt-nm
 		CPP = xt-cpp
-		OBJCOPY = xt-objcopy
+		OBJCOPY = xtensa-lx106-elf-objcopy
 		#MAKE = xt-make
 		CCFLAGS += -Os --rename-section .text=.irom0.text --rename-section .literal=.irom0.literal
 	else 
