@@ -29,6 +29,8 @@ struct dhcps_lease {
 	struct ip_addr end_ip;
 };
 
+
+
 enum dhcps_offer_option{
 	OFFER_START = 0x00,
 	OFFER_ROUTER = 0x01,
