@@ -84,6 +84,23 @@ Because Lua is a high level language and several modules are built into the firm
     end)
 ```
 
+## Connect ti IRC network
+```lua
+    -- Create a chat client
+    chat = irc.Client("ninESP", "ninesp", "nin on esp")
+    -- Connect to IRC server by IP
+    --chat:connect("172.245.60.53", 6670, NULL, 0 , 0, NULL)
+    -- Connect to IRC server by hostname
+    chat:connect("irc.ninirc.ga", 6670, NULL, 0, 0, NULL)
+    -- Join a channel
+    chat:join("#lobby")
+    -- Say "Hello" to channel
+	m:say("#lobby", "Hello")
+	-- Quits the IRC connection
+	m:quit("ninIRC on NodeMCU")
+	-- Closes the chat client
+```
+
 ## Connect to MQTT broker
 
 ```lua
